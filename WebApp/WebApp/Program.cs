@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<WebAppContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppContext")));
+    options.UseSqlite());
+
 builder.Services.AddAzureClients(clientBuilder =>
 {
     clientBuilder.AddBlobServiceClient(builder.Configuration["benchmarkstorage01:blob"], preferMsi: true);
