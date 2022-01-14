@@ -16,7 +16,6 @@ namespace WebApp.Data
         }
 
         public DbSet<WebApp.Models.Contact> Contact { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite($"Data Source=contacts.db");
+        
     }
 }

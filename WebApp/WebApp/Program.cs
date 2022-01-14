@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<WebAppContext>(options =>
-    options.UseSqlite());
+    options.UseSqlite(builder.Configuration.GetConnectionString("WebAppContext")));
 
 builder.Services.AddAzureClients(clientBuilder =>
 {
