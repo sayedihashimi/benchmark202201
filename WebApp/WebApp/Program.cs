@@ -1,8 +1,14 @@
-using Microsoft.Extensions.Azure;
+﻿using Microsoft.Extensions.Azure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WebApp.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<WebAppContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppContext")));
 builder.Services.AddAzureClients(clientBuilder =>
 {
     clientBuilder.AddBlobServiceClient(builder.Configuration["benchmarkstorage01:blob"], preferMsi: true);
