@@ -12,7 +12,8 @@
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AZURE_USERNAME": "sayedha@outlook.com"
       },
       "applicationUrl": "https://localhost:7272;http://localhost:5272",
       "dotnetRunMessages": true
@@ -21,7 +22,8 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "AZURE_USERNAME": "sayedha@outlook.com"
       }
     },
     "Docker": {
@@ -29,7 +31,10 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "publishAllPorts": true,
-      "useSSL": true
+      "useSSL": true,
+      "environmentVariables": {
+        "AZURE_USERNAME": "sayedha@outlook.com"
+      }
     }
   }
 }

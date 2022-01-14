@@ -1,7 +1,13 @@
+using Microsoft.Extensions.Azure;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddAzureClients(clientBuilder =>
+{
+    clientBuilder.AddBlobServiceClient(builder.Configuration["benchmarkstorage01:blob"], preferMsi: true);
+    clientBuilder.AddQueueServiceClient(builder.Configuration["benchmarkstorage01:queue"], preferMsi: true);
+});
 
 var app = builder.Build();
 
