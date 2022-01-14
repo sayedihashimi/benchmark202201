@@ -6,6 +6,10 @@
     "storage1": {
       "type": "storage",
       "connectionId": "benchmarkapi01"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:WebApiContext"
     }
   }
 }

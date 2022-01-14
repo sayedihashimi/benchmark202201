@@ -1,5 +1,11 @@
-using Microsoft.Extensions.Azure;
+﻿using Microsoft.Extensions.Azure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using WebApi.Data;
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<WebApiContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebApiContext")));
 
 // Add services to the container.
 
