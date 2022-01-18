@@ -9,7 +9,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { TictactoeComponent } from './tictactoe/tictactoe.component';
+import { NewpageComponent } from './newpage/newpage.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { TictactoeComponent } from './tictactoe/tictactoe.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    TictactoeComponent
+    NewpageComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +28,7 @@ import { TictactoeComponent } from './tictactoe/tictactoe.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'tictactoe', component: TictactoeComponent }
+      { path: 'newpage', component: NewpageComponent }
     ])
   ],
   providers: [],
